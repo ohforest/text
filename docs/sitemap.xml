@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
+    <loc>https://ohforest.github.io/text/categories/</loc>
     <lastmod>2021-07-20T12:47:40+08:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://ohforest.github.io/text/posts/</loc>
     <lastmod>2021-07-20T12:47:40+08:00</lastmod>
   </url><url>
-    <loc>/categories/systemd/</loc>
+    <loc>https://ohforest.github.io/text/categories/systemd/</loc>
     <lastmod>2021-07-20T12:47:40+08:00</lastmod>
   </url><url>
-    <loc>/posts/systemd-template-unit-files/</loc>
+    <loc>https://ohforest.github.io/text/posts/systemd-template-unit-files/</loc>
     <lastmod>2021-07-20T12:47:40+08:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://ohforest.github.io/text/tags/</loc>
     <lastmod>2021-07-20T12:47:40+08:00</lastmod>
   </url><url>
-    <loc>/tags/template/</loc>
+    <loc>https://ohforest.github.io/text/tags/template/</loc>
     <lastmod>2021-07-20T12:47:40+08:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>https://ohforest.github.io/text/</loc>
     <lastmod>2021-07-20T12:47:40+08:00</lastmod>
   </url>
 </urlset>
