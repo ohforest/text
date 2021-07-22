@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on TEXT</title>
-    <link>https://ohforest.github.io/text/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on TEXT</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Jul 2021 12:47:40 +0800</lastBuildDate><atom:link href="https://ohforest.github.io/text/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jul 2021 12:47:40 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>template</title>
-      <link>https://ohforest.github.io/text/tags/template/</link>
+      <link>/tags/template/</link>
       <pubDate>Tue, 20 Jul 2021 12:47:40 +0800</pubDate>
       
-      <guid>https://ohforest.github.io/text/tags/template/</guid>
+      <guid>/tags/template/</guid>
       <description></description>
     </item>
     
