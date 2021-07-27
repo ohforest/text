@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Systemd Template Unit Files - TEXT</title>
+	<title>Force Download From Oss - TEXT</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,41 +51,14 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Systemd Template Unit Files</h1>
+			<h1 class="post__title">Force Download From Oss</h1>
 			
 		</header><div class="content post__content clearfix">
-			<h1 id="名称">[名称]</h1>
-<p>Systemd: Template unit files</p>
-<h1 id="功效">[功效]</h1>
-<p>多个单元复用同一模版。</p>
-<h1 id="成分">[成分]</h1>
-<pre><code>&lt;service_name&gt;@&lt;argument&gt;.service
-</code></pre><p>模版文件中饮用argument的两种形式</p>
-<ul>
-<li>%i (<code>/</code> to <code>-</code>, <code> </code>to<code>\x20</code>)</li>
-<li>I% (<code>-</code>to<code>/</code>)</li>
-</ul>
-<p>例如 /etc/path/to/some-conf</p>
-<ul>
-<li>%i: -etc-path-to-some-conf</li>
-<li>%I: /etc/path/to/some/conf</li>
-</ul>
-<h1 id="用法">[用法]</h1>
-<p>PPPOE</p>
-<pre><code>[Unit]
-Description=PPP connection for %I
-Before=network.target
-
-[Service]
-ExecStart=/usr/bin/pon %I
-Restart=always
-RestartSec=10
-StartLimitInterval=0
-ExecStop=/usr/bin/poff %I
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><pre><code>#systemctl start ppp@dsl-provider
+			<h1 id="起因">起因</h1>
+<p>前端通过OSS提供的链接地址下载资源，结果浏览器并没有弹出保存窗口而是把图片、视频等直接打开了。</p>
+<h1 id="解决">解决</h1>
+<p>OSS资源链接地址加<code>response-content-disposition=attachment</code>强制下载。</p>
+<pre><code>https://oss.host/some/resource?response-content-disposition=attachment
 </code></pre>
 		</div>
 		<footer class="post__footer">
@@ -94,7 +67,7 @@ WantedBy=multi-user.target
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/template/" rel="tag">template</a>
+			<a class="tags__link btn" href="/tags/content-disposition/" rel="tag">content-disposition</a>
 		</li>
 	</ul>
 </div>

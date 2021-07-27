@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on TEXT</title>
+    <link>/categories/docker/</link>
+    <description>Recent content in Docker on TEXT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Jul 2021 13:18:20 +0800</lastBuildDate><atom:link href="/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker for Mac With Http Proxy</title>
+      <link>/posts/docker-for-macos-with-http-proxy/</link>
+      <pubDate>Tue, 27 Jul 2021 13:18:20 +0800</pubDate>
+      
+      <guid>/posts/docker-for-macos-with-http-proxy/</guid>
+      <description>Docker for Mac With Http Proxy</description>
+    </item>
+    
+  </channel>
+</rss>
