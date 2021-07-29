@@ -12,7 +12,7 @@ tags:
 Systemd: Template unit files
 
 # [功效]
-多个单元复用同一模版
+多个单元复用同一模版。
 
 # [成分]
 ```

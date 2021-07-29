@@ -6,6 +6,10 @@ publishDir = "docs"
 paginate = "10"
 
 theme = "mainroad"
+googleAnalytics = "G-TXG7TQMK90"
+
+[Params]
+customJS = ["//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"] # Include custom JS files
 
 [Params.sidebar]
   home = "right" # Configure layout for home page
