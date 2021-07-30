@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>intercept-error on TEXT</title>
+    <link>/tags/intercept-error/</link>
+    <description>Recent content in intercept-error on TEXT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Jul 2021 13:31:56 +0800</lastBuildDate><atom:link href="/tags/intercept-error/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx Replace Proxy Error</title>
+      <link>/posts/nginx-replace-proxy-error/</link>
+      <pubDate>Fri, 30 Jul 2021 13:31:56 +0800</pubDate>
+      
+      <guid>/posts/nginx-replace-proxy-error/</guid>
+      <description>Nginx Replace Proxy Error</description>
+    </item>
+    
+  </channel>
+</rss>

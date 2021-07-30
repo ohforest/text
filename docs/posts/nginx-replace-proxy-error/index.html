@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Docker for Mac With Http Proxy - TEXT</title>
+	<title>Nginx Replace Proxy Error - TEXT</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,20 +51,35 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Docker for Mac With Http Proxy</h1>
+			<h1 class="post__title">Nginx Replace Proxy Error</h1>
 			
 		</header><div class="content post__content clearfix">
 			<h1 id="起因">起因</h1>
-<p>Docker for Mac 代理设置成 <code>127.0.0.1:8118</code>, 出现如下错误：</p>
-<p><code>Error response from daemon: Get https://index.docker.io/v1/search?q=redis&amp;n=25: proxyconnect tcp: dial tcp 127.0.0.1:8118: connect: connection refused</code></p>
-<h1 id="原因">原因</h1>
-<p>Docker for Mac 是运行在docker machine虚拟机中的，127.0.0.1指向本机地址自然会报connection refused。</p>
+<p>Nginx反向代理的时候，默认不使用Nginx的错误页面，即上游返回什么错误数据，Nginx就展示什么数据</p>
 <h1 id="解决">解决</h1>
-<p>Docker for Mac 代理设置成 <code>http://宿主机ip:8118</code>。</p>
-<h1 id="延伸">延伸</h1>
-<p>宿主机ip在更换网络或dhcp过期释放等情况下会改变，这样每次都要重新设置proxy并重启docker，为网卡设置固定alias ip，proxy设置成固定ip解决。</p>
-<p><code>sudo ifconfig en0 alias 192.16.8.8 255.255.255.0</code></p>
+<pre><code>...
+server {
+    ...
+    location / {
+        ...
+        proxy_intercept_errors on;
+        ...
+    }
+    ...
 
+    error_page   404  /404.html;
+    location = /404.html {
+       root /var/www/html;
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+       root /var/www/html;
+    }
+}
+
+...
+</code></pre>
 		</div>
 		<footer class="post__footer">
 			
@@ -73,6 +88,9 @@ if (!doNotTrack) {
 	<ul class="tags__list">
 		<li class="tags__item">
 			<a class="tags__link btn" href="/tags/proxy/" rel="tag">proxy</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/intercept-error/" rel="tag">intercept-error</a>
 		</li>
 	</ul>
 </div>
