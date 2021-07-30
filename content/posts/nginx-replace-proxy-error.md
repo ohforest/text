@@ -40,3 +40,9 @@ server {
 
 ...
 ```
+
+fastcgi也有类似设置
+
+```
+fastcgi_intercept_errors on;
+```
