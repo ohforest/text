@@ -82,7 +82,7 @@ TBS_TICWR                   NO
 </code></pre><h2 id="修改">修改</h2>
 <pre><code>ALERT DATABASE 
     DATAFILE '/u02/oracle/data/bigtbs01.dbf' AUTOEXTEND ON MAXSIZE UNLIMITED;
-</code></pre><p><em>MAXSIZE UNLIMITED</em>即为最大值</p>
+</code></pre><p><strong>MAXSIZE UNLIMITED</strong>即为最大值</p>
 <h1 id="smallfile-tablespaces">Smallfile Tablespaces</h1>
 <p>使用22位来存储block号，大小为(2^22-1)*32K = 128G(Oracle最大支持block为32k)</p>
 <h2 id="创建-1">创建</h2>
@@ -94,7 +94,7 @@ TBS_TICWR                   NO
 <h2 id="修改-1">修改</h2>
 <pre><code>ALERT DATABASE 
     DATAFILE '/u02/oracle/data/smalltbs01.dbf' SIZE 1G AUTOEXTEND ON MAXSIZE UNLIMITED;
-</code></pre><p><em>MAXSIZE UNLIMITED</em>即为最大值</p>
+</code></pre><p><strong>MAXSIZE UNLIMITED</strong>即为最大值</p>
 <h1 id="相关查询">相关查询</h1>
 <p>block size多大？</p>
 <pre><code>select value from v$parameter where name='db_block_size';

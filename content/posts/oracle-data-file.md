@@ -57,7 +57,7 @@ ALERT DATABASE
     DATAFILE '/u02/oracle/data/bigtbs01.dbf' AUTOEXTEND ON MAXSIZE UNLIMITED;
 ```
 
-*MAXSIZE UNLIMITED*即为最大值
+**MAXSIZE UNLIMITED**即为最大值
 
 # Smallfile Tablespaces
 
@@ -84,7 +84,7 @@ ALERT DATABASE
     DATAFILE '/u02/oracle/data/smalltbs01.dbf' SIZE 1G AUTOEXTEND ON MAXSIZE UNLIMITED;
 ```
 
-*MAXSIZE UNLIMITED*即为最大值
+**MAXSIZE UNLIMITED**即为最大值
 
 # 相关查询
 
