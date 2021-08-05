@@ -6,7 +6,16 @@
     <description>Recent content in Categories on TEXT</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Jul 2021 13:31:56 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 11:54:52 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle</title>
+      <link>/categories/oracle/</link>
+      <pubDate>Tue, 03 Aug 2021 11:54:52 +0800</pubDate>
+      
+      <guid>/categories/oracle/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Nginx</title>
       <link>/categories/nginx/</link>

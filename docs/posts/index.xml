@@ -6,7 +6,16 @@
     <description>Recent content in Posts on TEXT</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Jul 2021 13:31:56 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 11:54:52 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle Data File</title>
+      <link>/posts/oracle-data-file/</link>
+      <pubDate>Tue, 03 Aug 2021 11:54:52 +0800</pubDate>
+      
+      <guid>/posts/oracle-data-file/</guid>
+      <description>Oracle Data File</description>
+    </item>
+    
     <item>
       <title>Nginx Replace Proxy Error</title>
       <link>/posts/nginx-replace-proxy-error/</link>

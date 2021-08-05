@@ -7,7 +7,7 @@ categories:
   - "Nginx"
 tags:
   - "proxy"
-  - "intercept-error"
+  - "intercept error"
 ---
 
 # 起因

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Force Download From Oss - TEXT</title>
+	<title>Oracle Data File - TEXT</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,14 +51,48 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Force Download From Oss</h1>
+			<h1 class="post__title">Oracle Data File</h1>
 			
 		</header><div class="content post__content clearfix">
-			<h1 id="起因">起因</h1>
-<p>前端通过OSS提供的链接地址下载资源，结果浏览器并没有弹出保存窗口而是把图片、视频等直接打开了。</p>
-<h1 id="解决">解决</h1>
-<p>OSS资源链接地址加<code>response-content-disposition=attachment</code>强制下载。</p>
-<pre><code>https://oss.host/some/resource?response-content-disposition=attachment
+			<p>在ORACLE中，数据库是由实例和物理存储结构组成的，物理存储结构是指存储在磁盘上的物理文件，包括数据文件(data file)、控制文件(control file)、重做日志(online redo log)、参数文件(spfile/pfile)、警告日志(alert log)、跟踪文件(trace file)等众多作用不同的文件组成</p>
+<h1 id="bigfile-tablespaces">Bigfile Tablespaces</h1>
+<p>使用32位来存储block号，大小为(2^32-1)*32K = 128T(Oracle最大支持block为32k)</p>
+<h2 id="创建">创建</h2>
+<pre><code>CREATE BIGFILE TABLESPACE bigtbs 
+    DATAFILE '/u02/oracle/data/bigtbs01.dbf' SIZE 50G
+</code></pre><pre><code>ALERT BIGFILE TABLESPACE bigtbs 
+    ADD DATAFILE '/u02/oracle/data/bigtbs01.dbf' SIZE 50G AUTOEXTEND ON NEXT 5G MAXSIZE 100G;
+</code></pre><p>SIZE可以是kilobytes (K), megabytes (M), gigabytes (G), or terabytes (T).</p>
+<p>如果创建表空间的类型是大文件表空间，则不需要指定BIGFILE参数。</p>
+<p>是不是大文件表空间可通过DBA_TABLESPACES/USER_TABLESPACES/V$TABLESPACE表的BIGFILE字段查看</p>
+<pre><code>SELECT TABLESPACE_NAME, BIGFILE FROM DBA_TABLESPACES;
+
+TABLESPACE_NAME             BIGFILE
+SYSTEM                      NO
+SYSAUX                      NO
+UNDOTBS1                    NO
+TEMP                        NO
+USERS                       NO
+TIEAF_CUS                   NO
+TIEAF_TEMP                  NO
+TIEAF_TEST1                 NO
+TIEAF_SYS                   NO
+CWR_ATTENDANCE_SERVICE      NO
+TBS_TICWR                   NO
+</code></pre><h2 id="修改">修改</h2>
+<pre><code>ALERT DATABASE 
+    DATAFILE '/u02/oracle/data/bigtbs01.dbf' AUTOEXTEND ON MAXSIZE UNLIMITED;
+</code></pre><h1 id="smallfile-tablespaces">Smallfile Tablespaces</h1>
+<p>使用22位来存储block号，大小为(2^22-1)*32K = 128G(Oracle最大支持block为32k)</p>
+<h2 id="创建-1">创建</h2>
+<pre><code>CREATE SMALLFILE TABLESPACE smalltbs 
+    DATAFILE '/u02/oracle/data/smalltbs01.dbf' SIZE 10G
+</code></pre><pre><code>ALERT SMALLFILE TABLESPACE smalltbs 
+    ADD DATAFILE '/u02/oracle/data/smalltbs01.dbf' SIZE 1G AUTOEXTEND ON NEXT 5M MAXSIZE 10G;
+</code></pre><p>SIZE可以是kilobytes (K), megabytes (M), gigabytes (G), or terabytes (T).</p>
+<h2 id="修改-1">修改</h2>
+<pre><code>ALERT DATABASE 
+    DATAFILE '/u02/oracle/data/smalltbs01.dbf' SIZE 1G AUTOEXTEND ON MAXSIZE UNLIMITED;
 </code></pre>
 		</div>
 		<footer class="post__footer">
@@ -67,7 +101,7 @@ if (!doNotTrack) {
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/content-disposition/" rel="tag">content disposition</a>
+			<a class="tags__link btn" href="/tags/data-file/" rel="tag">data file</a>
 		</li>
 	</ul>
 </div>

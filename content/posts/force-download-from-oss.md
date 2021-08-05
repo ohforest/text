@@ -6,7 +6,7 @@ summary: "Force Download From Oss"
 categories:
   - "OSS"
 tags:
-  - "content-disposition"
+  - "content disposition"
 ---
 
 # 起因
