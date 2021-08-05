@@ -82,7 +82,8 @@ TBS_TICWR                   NO
 </code></pre><h2 id="修改">修改</h2>
 <pre><code>ALERT DATABASE 
     DATAFILE '/u02/oracle/data/bigtbs01.dbf' AUTOEXTEND ON MAXSIZE UNLIMITED;
-</code></pre><h1 id="smallfile-tablespaces">Smallfile Tablespaces</h1>
+</code></pre><p><em>MAXSIZE UNLIMITED</em>即为最大值</p>
+<h1 id="smallfile-tablespaces">Smallfile Tablespaces</h1>
 <p>使用22位来存储block号，大小为(2^22-1)*32K = 128G(Oracle最大支持block为32k)</p>
 <h2 id="创建-1">创建</h2>
 <pre><code>CREATE SMALLFILE TABLESPACE smalltbs 
@@ -93,7 +94,24 @@ TBS_TICWR                   NO
 <h2 id="修改-1">修改</h2>
 <pre><code>ALERT DATABASE 
     DATAFILE '/u02/oracle/data/smalltbs01.dbf' SIZE 1G AUTOEXTEND ON MAXSIZE UNLIMITED;
-</code></pre>
+</code></pre><p><em>MAXSIZE UNLIMITED</em>即为最大值</p>
+<h1 id="相关查询">相关查询</h1>
+<p>block size多大？</p>
+<pre><code>select value from v$parameter where name='db_block_size';
+</code></pre><p>data file概况</p>
+<pre><code>select * from dba_data_files;
+</code></pre><p>data files最大值</p>
+<pre><code>select name, value from v$parameter where name like 'db_files';
+</code></pre><h1 id="参考链接">参考链接</h1>
+<ul>
+<li>
+<p><a href="https://docs.oracle.com/cd/E11882_01/server.112/e25494/dfiles.htm#ADMIN012">15 Managing Data Files and Temp Files</a></p>
+</li>
+<li>
+<p><a href="https://docs.oracle.com/cd/E11882_01/server.112/e25494/tspaces.htm#ADMIN13316">14 Managing Tablespaces</a></p>
+</li>
+</ul>
+
 		</div>
 		<footer class="post__footer">
 			

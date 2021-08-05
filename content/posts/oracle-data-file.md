@@ -57,6 +57,8 @@ ALERT DATABASE
     DATAFILE '/u02/oracle/data/bigtbs01.dbf' AUTOEXTEND ON MAXSIZE UNLIMITED;
 ```
 
+*MAXSIZE UNLIMITED*即为最大值
+
 # Smallfile Tablespaces
 
 使用22位来存储block号，大小为(2^22-1)*32K = 128G(Oracle最大支持block为32k)
@@ -81,3 +83,32 @@ SIZE可以是kilobytes (K), megabytes (M), gigabytes (G), or terabytes (T).
 ALERT DATABASE 
     DATAFILE '/u02/oracle/data/smalltbs01.dbf' SIZE 1G AUTOEXTEND ON MAXSIZE UNLIMITED;
 ```
+
+*MAXSIZE UNLIMITED*即为最大值
+
+# 相关查询
+
+block size多大？
+
+```
+select value from v$parameter where name='db_block_size';
+```
+
+data file概况
+
+```
+select * from dba_data_files;
+```
+
+data files最大值
+
+```
+select name, value from v$parameter where name like 'db_files';
+```
+
+# 参考链接
+
+- [15 Managing Data Files and Temp Files](https://docs.oracle.com/cd/E11882_01/server.112/e25494/dfiles.htm#ADMIN012)
+
+- [14 Managing Tablespaces](https://docs.oracle.com/cd/E11882_01/server.112/e25494/tspaces.htm#ADMIN13316)
+
